@@ -12,27 +12,28 @@
 
 <body>
     <%- include('partials/header') %>
+        <main class="login-main">
+            <h1>Login to Xenol</h1>
+            <% if(locals.error){%>
+                <p style="color:red">
+                    <%=error%>
+                </p>
+                <%}%>
+                    <form action="/login" method="post">
 
-        <h1>Login to Xenol</h1>
-        <% if(locals.error){%>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email"> <br> <br>
 
-            <h2 style="color:red">
-                <%=error%>
-            </h2>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password"> <br> <br>
 
-            <%}%>
-                <form action="/login" method="post">
+                        <input type="submit" value="Log In">
 
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email"> <br> <br>
+                    </form>
 
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password"> <br> <br>
 
-                    <input type="submit" value="Log In">
-
-                </form>
-                <%- include('partials/footer') %>
+        </main>
+        <%- include('partials/footer') %>
 
 </body>
 

@@ -11,115 +11,117 @@
 
 <body>
     <%- include('partials/header') %>
+        <main class="register-main">
+            <h1>Welcome to Xenol Digital Security</h1>
 
-        <h1>Welcome to Xenol Digital Security</h1>
-
-        <!-- falsy values in js -->
+            <!-- falsy values in js -->
 
 
-        <%if(locals.error){%>
-            <!-- with default values(value atrribute has data from previous submision) -->
-            <form action="/register" method="post">
-
-                <label for="company">Company Name</label>
-                <input type="text" name="company" id="company" value="<%=data.company%>"> <br> <br>
-                <%if(locals.emailError){%>
-                    <p style="color:red">
-                        <%=emailError%>
-                    </p>
-                    <%}%>
-
-                        <label for="email">Email</label>
-                        <input type="email" value="<%=data.email%>" name="email" id="email" required> <br> <br>
-
-                        <%if(locals.passwordError){%>
-                            <p style="color:red">
-                                <%=passwordError%>
-                            </p>
-                            <%}%>
-
-                                <label for="password">Password</label>
-                                <input type="password" value="<%=data.password%>" name="password" id="password"> <br>
-                                <br>
-
-                                <label for="confirm-password">Confirm Password</label>
-                                <input type="password" name="confirm_password" id="confirm-password"
-                                    value="<%=data.confirm_password%>">
-                                <br> <br>
-
-                                <label for="domain">Domain name</label>
-                                <input type="text" name="domain" value="<%=data.domain%>" id="domain"> <br> <br>
-
-                                <label for="num_of_employess">Number of Employess</label>
-
-                                <input type="radio" name="num_of_employess" id="below-5" value="1-4">
-                                <label for="below-5">Below 5</label>
-
-                                <input type="radio" name="num_of_employess" id="5-20" vallue="5-19">
-                                <label for="5-20">Between 5 and 20</label>
-
-                                <input type="radio" name="num_of_employess" id="above-20" value="20-100">
-                                <label for="above-20">Above 20</label> <br> <br>
-
-                                <label for="service">Services</label>
-                                <select name="service" id="service">
-                                    <option value="general">General Digital Security</option>
-                                    <option value="web-security"> Web Security </option>
-                                    <option value="training">Employee training</option>
-                                </select> <br> <br>
-
-                                <label for="description">Description</label> <br>
-                                <textarea value="<%=data.description%>" name="description" id="description" cols="30"
-                                    rows="10"></textarea> <br> <br>
-
-                                <input type="submit" value="Register">
-            </form>
-
-            <%}else{%>
-                <!-- no default values(no value attribute in input elements) -->
+            <%if(locals.error){%>
+                <!-- with default values(value atrribute has data from previous submision) -->
                 <form action="/register" method="post">
 
                     <label for="company">Company Name</label>
-                    <input type="text" name="company" id="company"> <br> <br>
+                    <input type="text" name="company" id="company" value="<%=data.company%>"> <br> <br>
+                    <%if(locals.emailError){%>
+                        <p style="color:red">
+                            <%=emailError%>
+                        </p>
+                        <%}%>
 
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" required> <br> <br>
+                            <label for="email">Email</label>
+                            <input type="email" value="<%=data.email%>" name="email" id="email" required> <br> <br>
 
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password"> <br> <br>
+                            <%if(locals.passwordError){%>
+                                <p style="color:red">
+                                    <%=passwordError%>
+                                </p>
+                                <%}%>
 
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" name="confirm_password" id="confirm-password"> <br> <br>
+                                    <label for="password">Password</label>
+                                    <input type="password" value="<%=data.password%>" name="password" id="password">
+                                    <br>
+                                    <br>
 
-                    <label for="domain">Domain name</label>
-                    <input type="text" name="domain" id="domain"> <br> <br>
+                                    <label for="confirm-password">Confirm Password</label>
+                                    <input type="password" name="confirm_password" id="confirm-password"
+                                        value="<%=data.confirm_password%>">
+                                    <br> <br>
 
-                    <label for="num_of_employess">Number of Employess</label>
+                                    <label for="domain">Domain name</label>
+                                    <input type="text" name="domain" value="<%=data.domain%>" id="domain"> <br> <br>
 
-                    <input type="radio" name="num_of_employess" id="below-5" value="1-4">
-                    <label for="below-5">Below 5</label>
+                                    <label for="num_of_employess">Number of Employess</label>
 
-                    <input type="radio" name="num_of_employess" id="5-20" vallue="5-19">
-                    <label for="5-20">Between 5 and 20</label>
+                                    <input type="radio" name="num_of_employess" id="below-5" value="1-4">
+                                    <label for="below-5">Below 5</label>
 
-                    <input type="radio" name="num_of_employess" id="above-20" value="20-100">
-                    <label for="above-20">Above 20</label> <br> <br>
+                                    <input type="radio" name="num_of_employess" id="5-20" vallue="5-19">
+                                    <label for="5-20">Between 5 and 20</label>
 
-                    <label for="service">Services</label>
-                    <select name="service" id="service">
-                        <option value="general">General Digital Security</option>
-                        <option value="web-security"> Web Security </option>
-                        <option value="training">Employee training</option>
-                    </select> <br> <br>
+                                    <input type="radio" name="num_of_employess" id="above-20" value="20-100">
+                                    <label for="above-20">Above 20</label> <br> <br>
 
-                    <label for="description">Description</label> <br>
-                    <textarea name="description" id="description" cols="30" rows="10"></textarea> <br> <br>
+                                    <label for="service">Services</label>
+                                    <select name="service" id="service">
+                                        <option value="general">General Digital Security</option>
+                                        <option value="web-security"> Web Security </option>
+                                        <option value="training">Employee training</option>
+                                    </select> <br> <br>
 
-                    <input type="submit" value="Register">
+                                    <label for="description">Description</label> <br>
+                                    <textarea value="<%=data.description%>" name="description" id="description"
+                                        cols="30" rows="10"></textarea> <br> <br>
+
+                                    <input type="submit" value="Register">
                 </form>
 
-                <%}%>
-                    <%- include('partials/footer') %>
+                <%}else{%>
+                    <!-- no default values(no value attribute in input elements) -->
+                    <form action="/register" method="post">
+
+                        <label for="company">Company Name</label>
+                        <input type="text" name="company" id="company"> <br> <br>
+
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" required> <br> <br>
+
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password"> <br> <br>
+
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" name="confirm_password" id="confirm-password"> <br> <br>
+
+                        <label for="domain">Domain name</label>
+                        <input type="text" name="domain" id="domain"> <br> <br>
+
+                        <label for="num_of_employess">Number of Employess</label>
+
+                        <input type="radio" name="num_of_employess" id="below-5" value="1-4">
+                        <label for="below-5">Below 5</label>
+
+                        <input type="radio" name="num_of_employess" id="5-20" vallue="5-19">
+                        <label for="5-20">Between 5 and 20</label>
+
+                        <input type="radio" name="num_of_employess" id="above-20" value="20-100">
+                        <label for="above-20">Above 20</label> <br> <br>
+
+                        <label for="service">Services</label>
+                        <select name="service" id="service">
+                            <option value="general">General Digital Security</option>
+                            <option value="web-security"> Web Security </option>
+                            <option value="training">Employee training</option>
+                        </select> <br> <br>
+
+                        <label for="description">Description</label> <br>
+                        <textarea name="description" id="description" cols="30" rows="10"></textarea> <br> <br>
+
+                        <input type="submit" value="Register">
+                    </form>
+
+                    <%}%>
+        </main>
+        <%- include('partials/footer') %>
 
 </body>
 
