@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 10px;
+}
+body {
+  font-family: sans-serif;
+  background-image: url(../images/main-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem 0px;
+}
+header > a {
+  text-decoration: none;
+  font-size: 3.5rem;
+  color: aliceblue;
+}
+header nav {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 2rem;
+}
+header nav a {
+  color: aliceblue;
+  text-decoration: none;
+  cursor: pointer;
+}
+header nav a:hover {
+  text-decoration: underline;
+}
